@@ -1,6 +1,11 @@
 var ans=0;
 var output="";
-function input_opr(opr)
+var plusminus="plus"
+function opt()
+{
+    document.getElementById("result").innerHTML="ANS";
+}
+function input(opr)
 {
     if(opr=="del")
     {
@@ -9,6 +14,20 @@ function input_opr(opr)
     else if(opr=="C")
     {
         output=0;
+    }
+    else if(opr=="+/-")
+    {
+        if(plusminus=="plus")
+        {
+            plusminus="minus";
+            output='-'+output;
+        }
+        else
+        {
+            plusminus="plus";
+            output=output.substring(1);
+        }
+
     }
     else
     {
@@ -24,14 +43,6 @@ function input_opr(opr)
         output="";
     }
 }
-function input_no(n)
-{
-    output+=n;
-    ans+=n;
-    document.getElementById("result").innerHTML=output;
-}
-console.log(ans)
-function output()
-{
-    document.getElementById("result").innerHTML=ans;
-}
+
+
+console.log(ans);
